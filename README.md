@@ -34,7 +34,7 @@ $ yarn dev
 ## 🖱️ Online Preview
 
 You may access and test the project on the link bellow
-**[https://art_museum.vercel.app](https://art_museum.vercel.app)**
+**[https://art-museum-eta.vercel.app](https://art-museum-eta.vercel.app)**
 
 ## 💻 Project
 
