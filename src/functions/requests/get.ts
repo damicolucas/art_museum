@@ -2,7 +2,10 @@ import api from "../../services/api";
 
 export const getImages = async (
   page: number,
-  setData: (value: { data: []; pagination: { total_pages: number } }) => void,
+  setData: (value: {
+    data: [];
+    pagination: { total_pages: number; current_page: number };
+  }) => void,
   setLoading: (value: boolean) => void
 ) => {
   try {
@@ -13,7 +16,6 @@ export const getImages = async (
         limit: 27,
       },
     });
-    console.log(response);
 
     if (response.status === 200) setData(response.data);
   } catch (error) {

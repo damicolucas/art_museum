@@ -15,7 +15,6 @@ import {
 } from "@mui/material";
 
 import { Download, ExpandMore, Share } from "@mui/icons-material";
-import { makeStyles } from "@mui/styles";
 import { useOutsideClick } from "../../functions/hooks";
 import {
   FacebookIcon,
@@ -45,12 +44,28 @@ const ExpandMoreWrapper = styled(({ expand, ...other }: ExpandMoreProps) => {
   }),
 }));
 
-const useStyles = makeStyles({
-  cardHeader: {
-    display: "block",
-    overflow: "hidden",
+const cardHeader = {
+  display: "block",
+  overflow: "hidden",
+};
+
+const cardImage = {
+  cursor: "pointer",
+  transition: "all 500ms ease",
+  "&:hover": {
+    filter: "blur(2px) brightness(.8)",
   },
-});
+};
+
+const hoverIcon = {
+  position: "absolute",
+  color: "white",
+  zIndex: 1,
+  transition: "all 500ms ease",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -58%)",
+};
 
 type ArtCardProps = {
   card: {
@@ -68,7 +83,6 @@ export default function ArtCard({ card }: ArtCardProps) {
   const [shareOptions, setShareOptions] = useState(false);
 
   const cardRef = useRef(null);
-  const classes = useStyles();
   const { handleModalContent } = useModal();
 
   const handleExpandClick = () => {
@@ -83,9 +97,9 @@ export default function ArtCard({ card }: ArtCardProps) {
   useOutsideClick(cardRef, closeExpandClick);
 
   return (
-    <Card ref={cardRef}>
+    <Card ref={cardRef} sx={{ position: "relative" }}>
       <CardHeader
-        className={classes.cardHeader}
+        sx={cardHeader}
         title={
           <Typography noWrap variant="h6" component="h4">
             {card.title}
@@ -97,7 +111,9 @@ export default function ArtCard({ card }: ArtCardProps) {
           </Typography>
         }
       />
+
       <CardMedia
+        sx={cardImage}
         component="img"
         height="194"
         image={`https://www.artic.edu/iiif/2/${card.image_id}/full/843,/0/default.jpg`}
@@ -118,7 +134,7 @@ export default function ArtCard({ card }: ArtCardProps) {
           target="_blank"
           download
         >
-          <IconButton aria-label="add to favorites">
+          <IconButton aria-label="download">
             <Download />
           </IconButton>
         </a>
@@ -127,7 +143,6 @@ export default function ArtCard({ card }: ArtCardProps) {
           aria-label="share"
           onClick={() => {
             setShareOptions(!shareOptions);
-            console.log(shareOptions);
           }}
         >
           <Share />

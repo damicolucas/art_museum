@@ -1,14 +1,5 @@
 import { Grid, Pagination } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { usePagination } from "../../contexts/paginationContext";
-
-const useStyles = makeStyles({
-  paginationContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    display: "flex",
-  },
-});
 
 type PaginationComponetProps = {
   paginationCount: number;
@@ -16,11 +7,14 @@ type PaginationComponetProps = {
 export default function PaginationComponet({
   paginationCount,
 }: PaginationComponetProps) {
-  const classes = useStyles();
   const { page, handlePagination } = usePagination();
 
   return (
-    <Grid spacing={2} item xs={12} className={classes.paginationContainer}>
+    <Grid
+      item
+      xs={12}
+      sx={{ alignItems: "center", justifyContent: "center", display: "flex" }}
+    >
       <Pagination
         size="small"
         page={page}

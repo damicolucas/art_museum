@@ -10,8 +10,8 @@ export default function ArtContent({ data }: ArtContentProps) {
     <Grid container spacing={4}>
       {data.data?.map((card, i) => {
         return (
-          <Grid item xs={12} sm={6} md={4}>
-            <ArtCard key={i} card={card} />
+          <Grid item xs={12} sm={6} md={4} key={i}>
+            <ArtCard card={card} />
           </Grid>
         );
       })}
