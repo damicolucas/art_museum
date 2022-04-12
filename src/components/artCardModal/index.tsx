@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import { SyntheticEvent } from "react";
 import { useModal } from "../../contexts/modalContext";
 
 const modalStyle = {
@@ -36,6 +37,9 @@ export default function ArtCardModal() {
           sx={imgStyle}
           alt="The house from the offer."
           src={`https://www.artic.edu/iiif/2/${content.image_id}/full/843,/0/default.jpg`}
+          onError={(e: SyntheticEvent<HTMLImageElement>) =>
+            (e.currentTarget.src = "/img/error.png")
+          }
         />
       </Box>
     </Modal>

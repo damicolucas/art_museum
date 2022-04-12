@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 
 import { Grid } from "@mui/material";
@@ -7,6 +7,7 @@ import { CacheProvider } from "@emotion/react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 
 import Header from "../components/header";
+import { useLocalStorage } from "../functions/hooks";
 import { PaginationContextProvider } from "../contexts/paginationContext";
 import { ModalContextProvider } from "../contexts/modalContext";
 import createEmotionCache from "../utility/createEmotionCache";
@@ -26,10 +27,18 @@ export default function MyApp({
   emotionCache = clientSideEmotionCache,
 }: MyAppProps) {
   const [darkMode, setDarkMode] = useState(false);
+  const [storedThemeMode, setStoredThemeMode] = useLocalStorage(
+    "darkMode",
+    false
+  );
 
   const toggleTheme = () => {
     setDarkMode((prev) => !prev);
   };
+
+  useEffect(() => {
+    setDarkMode(storedThemeMode);
+  }, [storedThemeMode]);
 
   return (
     <PaginationContextProvider>

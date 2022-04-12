@@ -57,16 +57,6 @@ const cardImage = {
   },
 };
 
-const hoverIcon = {
-  position: "absolute",
-  color: "white",
-  zIndex: 1,
-  transition: "all 500ms ease",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -58%)",
-};
-
 type ArtCardProps = {
   card: {
     image_id: string;
