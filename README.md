@@ -1,34 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-license">License</a>
+</p>
 
-## Getting Started
+## ⚛ Technologies
 
-First, run the development server:
+- [React JS](https://reactjs.org)
+- [Next JS](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Material UI](https://mui.com)
+
+## 🚀 Getting started
+
+Clone the project and access the folder
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone git@github.com:damicolucas/art_museum.git && cd art_museum
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Follow the steps below
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+# Install the dependencies
+$ yarn install
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# Start the project
+$ yarn dev
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
 
-## Learn More
+## 🖱️ Online Preview
 
-To learn more about Next.js, take a look at the following resources:
+You may access and test the project on the link bellow
+**[https://art_museum.vercel.app](https://art_museum.vercel.app)**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💻 Project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This is a simple project developed using the API provided by **[The Art Institute of Chicago](https://www.artic.edu)**, for study purposes.
 
-## Deploy on Vercel
+## 📝 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+Made by [damicolucas](https://github.com/damicolucas) 👋.

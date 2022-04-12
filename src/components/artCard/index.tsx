@@ -132,6 +132,7 @@ export default function ArtCard({ card }: ArtCardProps) {
         <a
           href={`https://www.artic.edu/iiif/2/${card.image_id}/full/843,/0/default.jpg`}
           target="_blank"
+          rel="noreferrer"
           download
         >
           <IconButton aria-label="download">
